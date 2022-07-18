@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = () => {
     return(
-    <Stack 
+    <Stack
     direction='row'
     sx={{
         marginTop: '3rem',

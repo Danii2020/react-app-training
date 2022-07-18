@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Container } from '@mui/material';
 import SearchBar from "./components/SearchBar/Searchbar";
 
