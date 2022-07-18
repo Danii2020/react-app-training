@@ -10,7 +10,7 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
-        ]
+        ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -24,5 +24,4 @@ module.exports = {
             template: path.resolve(__dirname, '..', './public/index.html'),
         }),
     ],
-
-}
+};

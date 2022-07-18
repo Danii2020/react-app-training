@@ -1,50 +1,55 @@
-import * as React from "react"
+import * as React from 'react';
 import { Stack, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useState } from "react";
+import { useState } from 'react';
 
-const SearchBar = (props: { inputUser: String; setInputUser: React.Dispatch<React.SetStateAction<string>>; }) => {
-
-    const {setInputUser} = props;
+const SearchBar = (props: {
+    inputUser: String;
+    setInputUser: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+    const { setInputUser } = props;
 
     const [valueInput, setValueInput] = useState('');
 
-    const onSearchValueChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        const inputValue = e.target.value
+    const onSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputValue = e.target.value;
         setValueInput(inputValue);
-    }
+    };
 
     const handleSubmit = () => {
         setInputUser(valueInput);
-    }
-    return(
-    <Stack
-    direction='row'
-    sx={{
-        marginTop: '3rem',
-        width: '80%'
-    }}>
-        <TextField
-        id='outlined-basic'
-        label='GitHub User'
-        variant='outlined'
-        value={valueInput}
-        onChange={onSearchValueChange}
-        placeholder="Search a GitHub user"
-        size='small'
-        sx={{
-            width:'90%'
-        }}/>
-        <IconButton
-        onClick={handleSubmit}
-        size="small"
-        sx={{
-            left: '-3rem'
-        }}>
-            <SearchIcon/>
-        </IconButton>
-    </Stack>
-    )
-}
+    };
+    return (
+        <Stack
+            direction="row"
+            sx={{
+                marginTop: '3rem',
+                width: '80%',
+            }}
+        >
+            <TextField
+                id="outlined-basic"
+                label="GitHub User"
+                variant="outlined"
+                value={valueInput}
+                onChange={onSearchValueChange}
+                placeholder="Search a GitHub user"
+                size="small"
+                sx={{
+                    width: '90%',
+                }}
+            />
+            <IconButton
+                onClick={handleSubmit}
+                size="small"
+                sx={{
+                    left: '-3rem',
+                }}
+            >
+                <SearchIcon />
+            </IconButton>
+        </Stack>
+    );
+};
 
 export default SearchBar;
