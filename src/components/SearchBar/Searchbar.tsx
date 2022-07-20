@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Stack, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useState } from 'react';
 
 function SearchBar(props: {
-    inputUser: string;
-    setInputUser: React.Dispatch<React.SetStateAction<string>>;
+  inputUser: string;
+  setInputUser: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const { setInputUser } = props;
 
