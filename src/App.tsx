@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from '@mui/material';
 import SearchBar from './components/SearchBar/Searchbar';
-import { getGitHubUser } from '../services/users';
+import UserCard from './containers/UserCard/UserCard';
+import { getGitHubUser } from './services/users';
 
 export function App() {
   const [inputUser, setInputUser] = useState('octocat');
@@ -20,9 +21,7 @@ export function App() {
     } else {
       setUserState(userResponse);
     }
-
-    console.log(userResponse);
-  }
+  };
 
   useEffect(() => {
     getUser(inputUser);
@@ -42,6 +41,7 @@ export function App() {
       }}
     >
       <SearchBar inputUser={inputUser} setInputUser={setInputUser} />
+      <UserCard userState={userState} />
     </Container>
   );
 }
