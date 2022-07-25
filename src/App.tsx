@@ -7,15 +7,16 @@ import { getGitHubUser } from './services/users';
 export function App() {
   const [inputUser, setInputUser] = useState('octocat');
   const [userState, setUserState] = useState('inputUser');
+  const notFound:string = 'Not Found';
 
   const getUser = async (user: String) => {
     const userResponse = await getGitHubUser(user);
 
     if (userState === 'octocat') {
-      localStorage.setItem('ocatocat', userResponse);
+      localStorage.setItem('octocat', userResponse);
     }
 
-    if (userResponse.message === 'Not found') {
+    if (userResponse.message === notFound) {
       const { octocat } = localStorage;
       setInputUser(octocat);
     } else {

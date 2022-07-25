@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Grid, CardMedia } from '@mui/material';
+import { Grid, Avatar, Stack } from '@mui/material';
 import React from 'react';
 import MainUserInfo from '../../components/MainUserInfo/MainUserInfo';
 import UserDescription from './UserDescription/UserDescription';
@@ -9,14 +9,36 @@ function UserCard(props: { userState: any }) {
   const { avatar_url } = userState;
 
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{
+        marginTop: '2rem',
+      }}
+    >
       <Grid item xs={3}>
-        <CardMedia component="img" alt="GitHub User" image={avatar_url} />
+        <Avatar
+          alt="GitHub User"
+          src={avatar_url}
+          sx={{
+            width: '80%',
+            height: 'auto',
+            marginLeft: '1rem',
+          }}
+        />
       </Grid>
       <Grid item xs={9}>
-        <MainUserInfo userState={userState} />
+        <Stack
+          direction="column"
+          spacing={1}
+          sx={{
+            margin: '2rem',
+          }}
+        >
+          <MainUserInfo userState={userState} />
+          <UserDescription userState={userState} />
+        </Stack>
       </Grid>
-      <UserDescription userState={userState} />
     </Grid>
   );
 }

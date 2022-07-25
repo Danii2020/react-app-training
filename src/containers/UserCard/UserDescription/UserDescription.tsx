@@ -9,11 +9,15 @@ function UserDescription(props: { userState: any }) {
 
   return (
     <>
-      <Stack>
+      <Stack
+        sx={{
+          justifyContent: 'center',
+        }}
+      >
         {bio !== null ? (
-          <Typography>{bio}</Typography>
+          <Typography variant="body1">{bio}</Typography>
         ) : (
-          <Typography>This user does not have a bio.</Typography>
+          <Typography variant="body1">This user does not have a bio.</Typography>
         )}
       </Stack>
       <PaperInfo userState={userState} />

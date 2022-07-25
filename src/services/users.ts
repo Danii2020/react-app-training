@@ -5,4 +5,4 @@ export const getGitHubUser = async (user: String) => {
     method: 'GET',
   });
   return response.json();
-};
+}

@@ -23,15 +23,32 @@ function LocationInfo(props: { userState: any }) {
     } = userState;
 
   return (
-    <Grid container>
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 4, sm: 8, md: 12 }}
+      sx={{
+        marginTop: '1rem',
+      }}
+    >
       <Grid item xs={6}>
-        <Stack>
+        <Stack
+          direction="row"
+          spacing={2}
+        >
           <LocationIcon />
-          <Typography>{location}</Typography>
+          {location !== null ? (
+            <Typography>{location}</Typography>
+          ) : (
+            <Typography>Location not available.</Typography>
+          )}
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack
+          direction="row"
+          spacing={2}
+        >
           <TwitterIcon />
           {twitter_username !== null ? (
             <Typography>{twitter_username}</Typography>
@@ -41,7 +58,10 @@ function LocationInfo(props: { userState: any }) {
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack
+          direction="row"
+          spacing={2}
+        >
           <LanguageIcon />
           {blog !== null ? (
             <Typography>
@@ -55,7 +75,10 @@ function LocationInfo(props: { userState: any }) {
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack
+          direction="row"
+          spacing={2}
+        >
           <BusinessIcon />
           {company !== null ? (
             <Typography>{company}</Typography>
