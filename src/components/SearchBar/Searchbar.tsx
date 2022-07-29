@@ -8,7 +8,7 @@ function SearchBar(props: {
 }) {
   const { setInputUser } = props;
 
-  const [valueInput, setValueInput] = useState('');
+  const [valueInput, setValueInput] = useState('octocat');
 
   const onSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -39,6 +39,7 @@ function SearchBar(props: {
         }}
       />
       <IconButton
+        aria-label="searchButton"
         onClick={handleSubmit}
         size="small"
         sx={{

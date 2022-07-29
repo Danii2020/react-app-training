@@ -14,7 +14,7 @@ function MainUserInfo(props: { userState: any }) {
           justifyContent: 'space-between',
         }}
       >
-        <Typography variant="h4">{name}</Typography>
+        <Typography variant="h4" aria-label="username">{name}</Typography>
         <Typography variant="subtitle2">{created_at}</Typography>
       </Stack>
       <Typography variant="caption">{`@${login}`}</Typography>

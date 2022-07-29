@@ -7,4 +7,7 @@ export const handlers = [
   rest.get(`${urlFetch}octocat`, (req, res, ctx) => res(
     ctx.json(users[0]),
   )),
+  rest.get(`${urlFetch}danii2020`, (req, res, ctx) => res(
+    ctx.json(users[1]),
+  )),
 ];

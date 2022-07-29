@@ -1,4 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-undef */
+// eslint-disable-next-line no-unused-vars
+import 'whatwg-fetch';
+import '@testing-library/jest-dom';
 import { server } from './src/mocks/server';
 
 // Establish API mocking before all tests.
