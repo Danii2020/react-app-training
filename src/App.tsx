@@ -3,6 +3,7 @@ import { Container } from '@mui/material';
 import SearchBar from './components/SearchBar/Searchbar';
 import UserCard from './containers/UserCard/UserCard';
 import { getGitHubUser } from './services/users';
+import NavBar from './components/NavBar/NavBar';
 
 export function App() {
   const [inputUser, setInputUser] = useState('octocat');
@@ -29,20 +30,24 @@ export function App() {
   }, [inputUser]);
 
   return (
-    <Container
-      sx={{
-        background: 'whitesmoke',
-        width: '80vw',
-        height: '500px',
-        borderRadius: '16px',
-        marginTop: '5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <SearchBar inputUser={inputUser} setInputUser={setInputUser} />
-      <UserCard userState={userState} />
-    </Container>
+    <>
+      <NavBar />
+      <Container
+        sx={{
+          background: 'whitesmoke',
+          width: '80vw',
+          height: '500px',
+          borderRadius: '16px',
+          marginTop: '5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <SearchBar setInputUser={setInputUser} />
+        <UserCard userState={userState} />
+      </Container>
+    </>
+
   );
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { server } from './src/tests/mocks/server';
+import { server } from './src/mocks/server';
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());

@@ -55,7 +55,11 @@
   },
   "jest": {
     "globalSetup": "./dist/tests/jest.config.js",
-    "moduleFileExtensions": ["ts", "js", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
     "testMatch": [
       "**/dist/**/*.test.js"
     ],

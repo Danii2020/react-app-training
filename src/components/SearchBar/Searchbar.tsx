@@ -4,7 +4,6 @@ import { Stack, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar(props: {
-  inputUser: string;
   setInputUser: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const { setInputUser } = props;
