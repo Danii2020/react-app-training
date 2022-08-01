@@ -78,7 +78,7 @@ function NavBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
-                  <Link to={`/${page}`}>
+                  <Link to={`/${page.toLowerCase()}`}>
                     {page}
                   </Link>
                 </MenuItem>
@@ -94,7 +94,7 @@ function NavBar() {
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 <Link
-                  to={`/${page}`}
+                  to={`/${page.toLowerCase()}`}
                   style={{
                     textDecoration: 'none',
                     color: 'white',

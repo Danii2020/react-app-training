@@ -5,7 +5,7 @@ import UserCard from './containers/UserCard/UserCard';
 import { getGitHubUser } from './services/users';
 import NavBar from './components/NavBar/NavBar';
 
-export function App() {
+function App() {
   const [inputUser, setInputUser] = useState('octocat');
   const [userState, setUserState] = useState('inputUser');
   const notFound:string = 'Not Found';
@@ -51,3 +51,5 @@ export function App() {
 
   );
 }
+
+export default App;

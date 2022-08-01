@@ -7,7 +7,7 @@ import {
   waitFor,
   fireEvent,
 } from '../../test/test.utils';
-import { App } from '../App';
+import App from '../App';
 
 describe('UserSearch test', () => {
   describe('if there is a octocat search', () => {
