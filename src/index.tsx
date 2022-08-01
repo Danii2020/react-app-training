@@ -15,10 +15,11 @@ const root: Root = createRoot(rootElement);
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
-      <Route path="blog" element={<Blog />} />
+      <Route path="/" element={<App />}>
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="blog" element={<Blog />} />
+      </Route>
     </Routes>
   </BrowserRouter>,
 );

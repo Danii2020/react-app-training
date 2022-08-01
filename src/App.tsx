@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 import SearchBar from './components/SearchBar/Searchbar';
 import UserCard from './containers/UserCard/UserCard';
 import { getGitHubUser } from './services/users';
@@ -32,6 +33,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <Outlet />
       <Container
         sx={{
           background: 'whitesmoke',
