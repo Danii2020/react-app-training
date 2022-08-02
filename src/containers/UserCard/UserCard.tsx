@@ -2,7 +2,7 @@
 import { Grid, Avatar, Stack } from '@mui/material';
 import React from 'react';
 import MainUserInfo from '../../components/MainUserInfo/MainUserInfo';
-import UserDescription from './UserDescription/UserDescription';
+import UserDescription from '../UserDescription/UserDescription';
 
 function UserCard(props: { userState: any }) {
   const { userState } = props;

@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { Grid } from '@mui/material';
+import { Container } from '@mui/material';
 import React from 'react';
 import NavBar from './NavBar';
 import Body from './Body';
@@ -10,20 +10,23 @@ type LayoutProps = {
 
 function PageLayout({ body }: LayoutProps):JSX.Element {
   return (
-    <Grid
-      container
-      columns={{ xs: 4, sm: 8, md: 12 }}
-      sx={{
-        marginTop: '2rem',
-      }}
-    >
-      <Grid item xs={1}>
-        <NavBar />
-      </Grid>
-      <Grid item xs={1}>
+    <>
+      <NavBar />
+      <Container
+        sx={{
+          background: 'whitesmoke',
+          width: '80vw',
+          height: '500px',
+          borderRadius: '16px',
+          marginTop: '5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <Body content={body} />
-      </Grid>
-    </Grid>
+      </Container>
+    </>
   )
 }
 

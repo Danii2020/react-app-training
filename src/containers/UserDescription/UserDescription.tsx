@@ -1,7 +1,7 @@
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
-import LocationInfo from '../../../components/LocationInfo/LocationInfo';
-import PaperInfo from '../../../components/PaperInfo/PaperInfo';
+import LocationInfo from '../../components/LocationInfo/LocationInfo';
+import PaperInfo from '../../components/PaperInfo/PaperInfo';
 
 function UserDescription(props: { userState: any }) {
   const { userState } = props;

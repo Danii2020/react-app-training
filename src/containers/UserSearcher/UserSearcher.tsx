@@ -1,0 +1,40 @@
+/* eslint-disable no-undef */
+import React, { useEffect, useState } from 'react';
+import SearchBar from '../../components/SearchBar/Searchbar';
+import { getGitHubUser } from '../../services/users';
+import UserCard from '../UserCard/UserCard';
+
+function UserSearcher(): JSX.Element {
+  const [inputUser, setInputUser] = useState('octocat');
+  const [userState, setUserState] = useState('inputUser');
+  const notFound:string = 'Not Found';
+
+  const getUser = async (user: String) => {
+    const userResponse = await getGitHubUser(user);
+
+    if (userState === 'octocat') {
+      localStorage.setItem('octocat', userResponse);
+    }
+
+    if (userResponse.message === notFound) {
+      const { octocat } = localStorage;
+      setInputUser(octocat);
+    } else {
+      setUserState(userResponse);
+    }
+  };
+
+  useEffect(() => {
+    getUser(inputUser);
+  }, [inputUser]);
+
+  return (
+    <>
+      <SearchBar setInputUser={setInputUser} />
+      <UserCard userState={userState} />
+    </>
+
+  )
+}
+
+export default UserSearcher;
