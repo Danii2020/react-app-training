@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 import { Paper, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { IGitHubUser } from '../../services/users';
 
-function PaperInfo(props: { userState: any }) {
+function PaperInfo(props: { userState: IGitHubUser }) {
   const { userState } = props;
   const { public_repos, followers, following } = userState;
 

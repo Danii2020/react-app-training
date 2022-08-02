@@ -11,8 +11,9 @@ import LocationIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LanguageIcon from '@mui/icons-material/Language';
 import BusinessIcon from '@mui/icons-material/Business';
+import { IGitHubUser } from '../../services/users';
 
-function LocationInfo(props: { userState: any }) {
+function LocationInfo(props: { userState: IGitHubUser }) {
   const { userState } = props;
   const
     {

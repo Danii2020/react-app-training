@@ -3,8 +3,9 @@ import { Grid, Avatar, Stack } from '@mui/material';
 import React from 'react';
 import MainUserInfo from '../../components/MainUserInfo/MainUserInfo';
 import UserDescription from '../UserDescription/UserDescription';
+import { IGitHubUser } from '../../services/users';
 
-function UserCard(props: { userState: any }) {
+function UserCard(props: { userState: IGitHubUser }) {
   const { userState } = props;
   const { avatar_url } = userState;
 

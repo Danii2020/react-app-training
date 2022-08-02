@@ -2,8 +2,9 @@ import { Stack, Typography } from '@mui/material';
 import React from 'react';
 import LocationInfo from '../../components/LocationInfo/LocationInfo';
 import PaperInfo from '../../components/PaperInfo/PaperInfo';
+import { IGitHubUser } from '../../services/users';
 
-function UserDescription(props: { userState: any }) {
+function UserDescription(props: { userState: IGitHubUser }) {
   const { userState } = props;
   const { bio } = userState;
 

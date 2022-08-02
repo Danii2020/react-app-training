@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
+import { IGitHubUser } from '../../services/users';
 
-function MainUserInfo(props: { userState: any }) {
+function MainUserInfo(props: { userState: IGitHubUser}) {
   const { userState } = props;
   const { name, login, created_at } = userState;
 
