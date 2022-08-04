@@ -3,12 +3,9 @@ import { Grid, Avatar, Stack } from '@mui/material';
 import React from 'react';
 import MainUserInfo from '../../components/MainUserInfo/MainUserInfo';
 import UserDescription from '../UserDescription/UserDescription';
-import { IGitHubUser } from '../../services/users';
+import { props } from '../../services/users';
 
-function UserCard(props: { userState: IGitHubUser }) {
-  const { userState } = props;
-  const { avatar_url } = userState;
-
+function UserCard({ user }:props) {
   return (
     <Grid
       container
@@ -20,7 +17,7 @@ function UserCard(props: { userState: IGitHubUser }) {
       <Grid item xs={3}>
         <Avatar
           alt="GitHub User"
-          src={avatar_url}
+          src={user.avatar_url}
           sx={{
             width: '80%',
             height: 'auto',
@@ -36,8 +33,8 @@ function UserCard(props: { userState: IGitHubUser }) {
             margin: '2rem',
           }}
         >
-          <MainUserInfo userState={userState} />
-          <UserDescription userState={userState} />
+          <MainUserInfo user={user} />
+          <UserDescription user={user} />
         </Stack>
       </Grid>
     </Grid>

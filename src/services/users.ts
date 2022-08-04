@@ -12,12 +12,20 @@ export interface IGitHubUser {
   public_repos: number,
   followers: number,
   following: number,
-  created_at: string
+  created_at: string,
+  message: string,
 }
 
-export const getGitHubUser = async (user: String) => {
+export interface props {
+  user: IGitHubUser
+}
+
+export async function getGitHubUser(user: string):Promise<IGitHubUser> {
   const response: Response = await fetch(`${urlFetch}${user}`, {
     method: 'GET',
+    headers: {
+      Authorization: 'Bearer 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',
+    },
   });
   return response.json();
 }

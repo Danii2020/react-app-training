@@ -2,12 +2,9 @@ import { Stack, Typography } from '@mui/material';
 import React from 'react';
 import LocationInfo from '../../components/LocationInfo/LocationInfo';
 import PaperInfo from '../../components/PaperInfo/PaperInfo';
-import { IGitHubUser } from '../../services/users';
+import { props } from '../../services/users';
 
-function UserDescription(props: { userState: IGitHubUser }) {
-  const { userState } = props;
-  const { bio } = userState;
-
+function UserDescription({ user }:props) {
   return (
     <>
       <Stack
@@ -15,14 +12,14 @@ function UserDescription(props: { userState: IGitHubUser }) {
           justifyContent: 'center',
         }}
       >
-        {bio !== null ? (
-          <Typography variant="body1">{bio}</Typography>
+        {user.bio !== null ? (
+          <Typography variant="body1">{user.bio}</Typography>
         ) : (
           <Typography variant="body1">This user does not have a bio.</Typography>
         )}
       </Stack>
-      <PaperInfo userState={userState} />
-      <LocationInfo userState={userState} />
+      <PaperInfo user={user} />
+      <LocationInfo user={user} />
     </>
   );
 }

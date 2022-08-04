@@ -11,18 +11,9 @@ import LocationIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LanguageIcon from '@mui/icons-material/Language';
 import BusinessIcon from '@mui/icons-material/Business';
-import { IGitHubUser } from '../../services/users';
+import { props } from '../../services/users';
 
-function LocationInfo(props: { userState: IGitHubUser }) {
-  const { userState } = props;
-  const
-    {
-      location,
-      twitter_username,
-      blog,
-      company,
-    } = userState;
-
+function LocationInfo({ user }:props) {
   return (
     <Grid
       container
@@ -38,8 +29,8 @@ function LocationInfo(props: { userState: IGitHubUser }) {
           spacing={2}
         >
           <LocationIcon />
-          {location !== null ? (
-            <Typography>{location}</Typography>
+          {user.location !== null ? (
+            <Typography>{user.location}</Typography>
           ) : (
             <Typography>Location not available.</Typography>
           )}
@@ -51,8 +42,8 @@ function LocationInfo(props: { userState: IGitHubUser }) {
           spacing={2}
         >
           <TwitterIcon />
-          {twitter_username !== null ? (
-            <Typography>{twitter_username}</Typography>
+          {user.twitter_username !== null ? (
+            <Typography>{user.twitter_username}</Typography>
           ) : (
             <Typography>Twitter not available.</Typography>
           )}
@@ -64,10 +55,10 @@ function LocationInfo(props: { userState: IGitHubUser }) {
           spacing={2}
         >
           <LanguageIcon />
-          {blog !== null ? (
+          {user.blog !== null ? (
             <Typography>
-              <Link href={blog} underline="none">
-                {blog}
+              <Link href={user.blog} underline="none">
+                {user.blog}
               </Link>
             </Typography>
           ) : (
@@ -81,8 +72,8 @@ function LocationInfo(props: { userState: IGitHubUser }) {
           spacing={2}
         >
           <BusinessIcon />
-          {company !== null ? (
-            <Typography>{company}</Typography>
+          {user.company !== null ? (
+            <Typography>{user.company}</Typography>
           ) : (
             <Typography>Company not available.</Typography>
           )}
