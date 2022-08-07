@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Stack, Typography } from '@mui/material';
-import { props } from '../../services/users';
+import { UserContext } from '../../context/UserContext';
 
-function MainUserInfo({ user }:props) {
+function MainUserInfo() {
+  const user = useContext(UserContext).githubUser;
   return (
     <>
       <Stack

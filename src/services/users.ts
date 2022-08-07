@@ -24,7 +24,7 @@ export async function getGitHubUser(user: string):Promise<IGitHubUser> {
   const response: Response = await fetch(`${urlFetch}${user}`, {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer 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',
+      Authorization: 'Bearer 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',
     },
   });
   return response.json();

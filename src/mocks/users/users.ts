@@ -1,5 +1,6 @@
-export const users = [
+import { IGitHubUser } from '../../services/users';
 
+export const users:IGitHubUser[] = [
   {
     login: 'octocat',
     avatar_url: 'https://avatars.githubusercontent.com/u/583231?v=4',
@@ -7,12 +8,13 @@ export const users = [
     company: '@github',
     blog: 'https://github.blog',
     location: 'San Francisco',
-    bio: null,
-    twitter_username: null,
+    bio: '',
+    twitter_username: '',
     public_repos: 8,
     followers: 6490,
     following: 9,
     created_at: '2011-01-25T18:44:36Z',
+    message: '',
 
   },
   {
@@ -28,6 +30,7 @@ export const users = [
     followers: 40,
     following: 1,
     created_at: '2020-08-18T22:41:00Z',
+    message: '',
 
   },
 ];

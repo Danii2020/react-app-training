@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useContext } from 'react';
 import
 {
   Grid,
@@ -11,9 +11,10 @@ import LocationIcon from '@mui/icons-material/LocationOn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LanguageIcon from '@mui/icons-material/Language';
 import BusinessIcon from '@mui/icons-material/Business';
-import { props } from '../../services/users';
+import { UserContext } from '../../context/UserContext';
 
-function LocationInfo({ user }:props) {
+function LocationInfo() {
+  const user = useContext(UserContext).githubUser;
   return (
     <Grid
       container

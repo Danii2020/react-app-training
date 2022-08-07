@@ -1,13 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Stack, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { UserContext } from '../../context/UserContext';
 
-function SearchBar(props: {
-  setInputUser: React.Dispatch<React.SetStateAction<string>>;
-}) {
-  const { setInputUser } = props;
-
+function SearchBar() {
+  const { setInputUser } = useContext(UserContext);
   const [valueInput, setValueInput] = useState('octocat');
 
   const onSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {

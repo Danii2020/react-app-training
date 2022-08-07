@@ -1,10 +1,11 @@
 import { Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import LocationInfo from '../../components/LocationInfo/LocationInfo';
 import PaperInfo from '../../components/PaperInfo/PaperInfo';
-import { props } from '../../services/users';
+import { UserContext } from '../../context/UserContext';
 
-function UserDescription({ user }:props) {
+function UserDescription() {
+  const user = useContext(UserContext).githubUser;
   return (
     <>
       <Stack
@@ -18,8 +19,8 @@ function UserDescription({ user }:props) {
           <Typography variant="body1">This user does not have a bio.</Typography>
         )}
       </Stack>
-      <PaperInfo user={user} />
-      <LocationInfo user={user} />
+      <PaperInfo />
+      <LocationInfo />
     </>
   );
 }

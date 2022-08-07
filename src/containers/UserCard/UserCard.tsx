@@ -1,11 +1,13 @@
 /* eslint-disable camelcase */
 import { Grid, Avatar, Stack } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import MainUserInfo from '../../components/MainUserInfo/MainUserInfo';
 import UserDescription from '../UserDescription/UserDescription';
-import { props } from '../../services/users';
+import { UserContext } from '../../context/UserContext';
+// import { props } from '../../services/users';
 
-function UserCard({ user }:props) {
+function UserCard() {
+  const user = useContext(UserContext).githubUser;
   return (
     <Grid
       container
@@ -33,8 +35,8 @@ function UserCard({ user }:props) {
             margin: '2rem',
           }}
         >
-          <MainUserInfo user={user} />
-          <UserDescription user={user} />
+          <MainUserInfo />
+          <UserDescription />
         </Stack>
       </Grid>
     </Grid>

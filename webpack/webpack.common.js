@@ -25,4 +25,7 @@ module.exports = {
       template: path.resolve(__dirname, '..', './public/index.html'),
     }),
   ],
+  experiments: {
+    topLevelAwait: true,
+  },
 };

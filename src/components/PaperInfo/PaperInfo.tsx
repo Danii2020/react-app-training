@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Paper, Stack, Typography } from '@mui/material';
-import { props } from '../../services/users';
+import { UserContext } from '../../context/UserContext';
 
-function PaperInfo({ user }:props) {
+function PaperInfo() {
+  const user = useContext(UserContext).githubUser;
   return (
     <Paper elevation={3}>
       <Stack
