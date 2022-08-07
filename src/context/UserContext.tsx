@@ -29,7 +29,10 @@ export function UserProvider({ children }:IProps) {
 
   return (
     <UserContext.Provider value={{
-      githubUser, setGithubUser, inputUser, setInputUser,
+      githubUser,
+      setGithubUser,
+      inputUser,
+      setInputUser,
     }}
     >
       {children}

@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-undef */
 import React, { useContext, useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import SearchBar from '../../components/SearchBar/Searchbar';
 import { getGitHubUser, IGitHubUser } from '../../services/users';
 import UserCard from '../UserCard/UserCard';
 import { UserContext } from '../../context/UserContext';
+import ErrorFallback from '../../components/Error/ErrorFallback';
 
 function UserSearcher(): JSX.Element {
   const data = useContext(UserContext);
-  // const [inputUser, setInputUser] = useState('octocat');
-  // const [userState, setUserState] = useState<IGitHubUser>(Object);
   const notFound:string = 'Not Found';
 
   const getUser = async (user: string) => {
@@ -32,11 +32,10 @@ function UserSearcher(): JSX.Element {
   }, [data.inputUser]);
 
   return (
-    <>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <SearchBar />
       <UserCard />
-    </>
-
+    </ErrorBoundary>
   )
 }
 

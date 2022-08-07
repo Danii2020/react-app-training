@@ -16,6 +16,9 @@ function SearchBar() {
   const handleSubmit = () => {
     setInputUser(valueInput);
   };
+  if (valueInput === 'error') {
+    throw new Error('I crashed!')
+  }
   return (
     <Stack
       direction="row"
