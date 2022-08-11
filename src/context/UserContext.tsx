@@ -1,15 +1,14 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { createContext, useState, ReactNode } from 'react';
-import { IGitHubUser, getGitHubUser } from '../services/users';
+import { IGitHubUser } from '../services/users';
 import { users } from '../mocks/users/users';
 
 interface IUserContext {
   githubUser:IGitHubUser,
-  setGithubUser:any,
+  setGithubUser:(data:IGitHubUser) => void
   inputUser:string,
-  setInputUser:any
+  setInputUser:(data:string) => void,
 }
 
 interface IProps {
@@ -18,9 +17,9 @@ interface IProps {
 
 export const UserContext = createContext<IUserContext>({
   githubUser: users[0],
-  setGithubUser: users[0],
+  setGithubUser: () => {},
   inputUser: 'octocat',
-  setInputUser: 'octocat',
+  setInputUser: () => {},
 });
 
 export function UserProvider({ children }:IProps) {
