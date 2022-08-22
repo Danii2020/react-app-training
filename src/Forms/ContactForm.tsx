@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import { Button, Stack } from '@mui/material';
 import * as yup from 'yup';
@@ -34,6 +34,11 @@ const userSchema = yup.object().shape({
 });
 
 function ContactForm() {
+  const firstNameInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    firstNameInputRef.current?.focus();
+  }, []);
   const handleSubmit = (values:IUserValues): void => {
     alert(JSON.stringify(values));
   }
@@ -57,16 +62,19 @@ function ContactForm() {
               name="firstName"
               label="FirstName"
               required
+              inputRef={firstNameInputRef}
             />
             <FormkField
               name="lastName"
               label="LastName"
               required
+              inputRef={null}
             />
             <FormkField
               name="email"
               label="Email"
               required
+              inputRef={null}
             />
             <Button
               variant="contained"

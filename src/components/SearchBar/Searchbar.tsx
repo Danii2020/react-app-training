@@ -1,5 +1,6 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable react/no-unused-prop-types */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { Stack, TextField, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { UserContext } from '../../context/UserContext';
@@ -7,6 +8,7 @@ import { UserContext } from '../../context/UserContext';
 function SearchBar() {
   const { setInputUser } = useContext(UserContext);
   const [valueInput, setValueInput] = useState('octocat');
+  const inputUserRef = useRef<HTMLInputElement>(null);
 
   const onSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -14,6 +16,7 @@ function SearchBar() {
   };
 
   const handleSubmit = () => {
+    inputUserRef.current?.focus();
     setInputUser(valueInput);
   };
   if (valueInput === 'error') {
@@ -31,6 +34,7 @@ function SearchBar() {
         id="outlined-basic"
         label="GitHub User"
         variant="outlined"
+        inputRef={inputUserRef}
         value={valueInput}
         onChange={onSearchValueChange}
         placeholder="Search a GitHub user"

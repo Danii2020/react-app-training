@@ -8,19 +8,21 @@ interface IFormikField {
     label: string;
     type?: string;
     required?: boolean;
+    inputRef: React.Ref<any> | undefined;
 }
 
 function FormkField({
-  name, label, type = 'text', required = false,
+  name, label, type = 'text', required = false, inputRef,
 }:IFormikField) {
   return (
     <Field
+      name={name}
+      label={label}
+      type={type}
       required={required}
       as={TextField}
-      label={label}
-      name={name}
+      inputRef={inputRef}
       fullWidth
-      type={type}
       helperText={<ErrorMessage name={name} />}
     />
   );
