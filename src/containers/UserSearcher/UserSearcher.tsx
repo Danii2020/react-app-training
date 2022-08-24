@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-undef */
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import SearchBar from '../../components/SearchBar/Searchbar';
 import { getGitHubUser, IGitHubUser } from '../../services/users';
@@ -12,7 +12,7 @@ function UserSearcher(): JSX.Element {
   const data = useContext(UserContext);
   const notFound:string = 'Not Found';
 
-  const getUser = async (user: string) => {
+  const getUser = useCallback(async (user: string) => {
     const userResponse:IGitHubUser = await getGitHubUser(user);
 
     if (data.inputUser === 'octocat') {
@@ -25,7 +25,7 @@ function UserSearcher(): JSX.Element {
     } else {
       data.setGithubUser(userResponse);
     }
-  };
+  }, []);
 
   useEffect(() => {
     getUser(data.inputUser);

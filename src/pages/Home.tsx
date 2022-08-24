@@ -1,15 +1,17 @@
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { Suspense } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 import UserSearcher from '../containers/UserSearcher/UserSearcher';
 import { UserProvider } from '../context/UserContext';
-// import { getGitHubUser, IGitHubUser } from '../services/users';
 import PageLayout from '../layouts/PageLayout';
 
 function Home(): JSX.Element {
   return (
-    <UserProvider>
-      <PageLayout body={<UserSearcher />} />
-    </UserProvider>
+    <Suspense fallback={<CircularProgress />}>
+      <UserProvider>
+        <PageLayout body={<UserSearcher />} />
+      </UserProvider>
+    </Suspense>
   )
 }
 
