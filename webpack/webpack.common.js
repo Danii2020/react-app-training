@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -24,8 +25,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './public/index.html'),
     }),
+    new webpack.DefinePlugin({
+      'process.env.AUTH_GB': JSON.stringify(process.env.AUTH_GB),
+    }),
   ],
   experiments: {
     topLevelAwait: true,
   },
+
 };

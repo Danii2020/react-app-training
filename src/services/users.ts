@@ -21,11 +21,12 @@ export interface props {
 }
 
 export async function getGitHubUser(user: string):Promise<IGitHubUser> {
+  console.log('holaaap' + process.env.AUTH_GB)
   const response: Response = await fetch(`${urlFetch}${user}`, {
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Bearer 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',
-    // },
+    headers: {
+      Authorization: `Bearer ${process.env.AUTH_GB}`,
+    },
   });
   return response.json();
 }
