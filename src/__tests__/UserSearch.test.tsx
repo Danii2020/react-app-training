@@ -10,7 +10,7 @@ import {
 import App from '../App';
 
 describe('UserSearch test', () => {
-  describe('if there is a octocat search', () => {
+  describe('if there is an octocat search', () => {
     it('renders its info', async () => {
       render(<App />);
       const input = screen.getByRole('textbox', { name: 'GitHub User' });
@@ -19,6 +19,7 @@ describe('UserSearch test', () => {
       await waitFor(() => expect(name).toHaveTextContent('The Octocat'));
     })
   })
+
   describe('if there is new user search', () => {
     it('renders its info', async () => {
       render(<App />);
@@ -32,6 +33,3 @@ describe('UserSearch test', () => {
     })
   })
 });
-// to be document, search input an elements specific to that user
-// firevent to change text, then click the button
-// find the new user info, before use waitFor

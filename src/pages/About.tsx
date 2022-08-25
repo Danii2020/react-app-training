@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout';
 
 function About() {
   return (
-    <PageLayout body={<h2> About us </h2>} />
+    <PageLayout body={<h2>About us</h2>} />
   )
 }
 
